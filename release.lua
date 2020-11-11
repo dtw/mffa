@@ -58,7 +58,11 @@ end)
 
 function check_incoming_text(original, modified, original_mode, modified_mode, blocked)
   if enabled then
-    if original:find(player.name..' regretfully releases') then
+    if original:find('You cannot fish here.') then
+      enabled = false
+      error('See above.')
+      window:text('MFFA stopped')
+    elseif original:find(player.name..' regretfully releases') then
       settings.recast = not settings.recast
       error('inventory full - auto-recast '..tostring(settings.recast))
     elseif original:find('You didn\'t catch anything.') then
