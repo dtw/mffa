@@ -77,7 +77,7 @@ function check_incoming_text(original, modified, original_mode, modified_mode, b
     elseif original:find(player.name..' caught a') then
       if settings.recast then
         local recastdelay = settings.delay.cast + (settings.random and (math.random() + math.random(0,2)) or 0.0)
-        if showrecast then log('recast in %.2f seconds':format(recastdelay)) end
+        if settings.showrecast then log('recast in %.2f seconds':format(recastdelay)) end
         recast_line(recastdelay)
       end
     end
@@ -104,7 +104,7 @@ function release_catch()
   if settings.recast then
     local recastdelay = settings.delay.cast + (settings.random and (math.random() + math.random(0,2)) or 0.0)
     --log('Recast in '..tostring(recastdelay)..' seconds')
-    if showrecast then log('recast in %.2f seconds':format(recastdelay)) end
+    if settings.showrecast then log('recast in %.2f seconds':format(recastdelay)) end
     recast_line(recastdelay)
   end
 end
