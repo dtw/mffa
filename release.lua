@@ -50,7 +50,6 @@ windower.register_event('addon command', function(command, ...)
     window:text('MFFA stopped')
     enabled = false
   elseif S{'recast','showrecast','random'}:contains(command) then
-    window:text('Auto-Release stopped')
     settings[command] = not settings[command]
     notice('auto-recast '..tostring(settings[command]))
   end
