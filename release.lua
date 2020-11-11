@@ -89,7 +89,7 @@ function check_incoming_text(original, modified, original_mode, modified_mode, b
 end
 
 function cancel_fishing()
-  local releasedelay = settings.delay.release + (settings.random and (math.random() + math.random(1,2)) or 0.0)
+  local releasedelay = settings.delay.release + (settings.random and math.random() or 0.0)
   windower.send_command('wait %.2f; lua i release release_catch':format(releasedelay))
 end
 
