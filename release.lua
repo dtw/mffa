@@ -51,7 +51,7 @@ windower.register_event('addon command', function(command, ...)
     enabled = false
   elseif S{'recast','showrecast','random'}:contains(command) then
     settings[command] = not settings[command]
-    notice('auto-recast '..tostring(settings[command]))
+    notice(command..' '..tostring(settings[command]))
   end
 end)
 
