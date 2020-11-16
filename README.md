@@ -17,17 +17,17 @@
 ## Commands
  When typing commands don't use "[ ]" or "|".
 ```
- 	//mffa [start|stop] - Starts and stops the addon
-  //mffa recast       - toggle auto-recast (on by default)
-  //mffa showrecast   - toggle recast messages (on by default)
-  //mffa random       - toggle action delays (on by default)
+//mffa [start|stop] - Starts and stops the addon
+//mffa recast       - toggle auto-recast (on by default)
+//mffa showrecast   - toggle recast messages (on by default)
+//mffa random       - toggle action delays (on by default)
 ```
 ## Defaults
   The following are 'on' by default:
   * Release items
   * Release monsters
   * Automatic recast
-  * Automatic recast messages
+  * Recast messages
   * Use random cast/release delays
 
 ## FAQ
@@ -44,4 +44,4 @@ Manage any inventory, check for bait, check you have a rod. None of that stuff.
 In fact, it won't even start fishing. You have to start.
 
 ###### Really?
-Yes. However, since it will try to fish automatically (once you have started) anything that would stop you fishing does stop the addon.
+Yes. However, since it will try to cast automatically (once you have started) anything that would stop you fishing does stop the addon.
