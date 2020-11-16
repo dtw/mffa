@@ -16,12 +16,12 @@
 
 ## Commands
  When typing commands don't use "[ ]" or "|".
-
+```
  	//mffa [start|stop] - Starts and stops the addon
   //mffa recast       - toggle auto-recast (on by default)
   //mffa showrecast   - toggle recast messages (on by default)
   //mffa random       - toggle action delays (on by default)
-
+```
 ## Defaults
   The following are 'on' by default:
   * Release items
