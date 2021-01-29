@@ -7,6 +7,7 @@ _addon.commands = {'start', 'stop', 'cancel', 'recast'}
 require('tables')
 require('logger')
 require('strings')
+require('chat')
 
 config = require('config')
 texts = require ('texts')
@@ -33,7 +34,7 @@ settings = config.load(defaults)
 
 -- start disabled
 enabled = false
-window = texts.new('MFFA stopped', settings)
+window = texts.new('MFFA '..'stopped':text_color(255, 82, 83), settings)
 window:show()
 
 -- get player
@@ -44,10 +45,10 @@ windower.register_event('addon command', function(command, ...)
   local args = {...}
 
   if command == 'start' then
-    window:text('MFFA running')
+    window:text('MFFA '..'running':text_color(10, 255, 13))
     enabled = true
   elseif S{'stop','cancel'}:contains(command) then
-    window:text('MFFA stopped')
+    window:text('MFFA '..'stopped':text_color(255, 82, 83))
     enabled = false
   elseif S{'recast','showrecast','random'}:contains(command) then
     settings[command] = not settings[command]
@@ -60,10 +61,11 @@ function check_incoming_text(original, modified, original_mode, modified_mode, b
     if original:find('You cannot fish here.') then
       enabled = false
       error('See above.')
-      window:text('MFFA stopped')
+      window:text('MFFA '..'stopped':text_color(255, 82, 83))
     elseif original:find('You can\'t fish without bait on the hook.') then
       enabled = false
       error('See above.')
+      window:text('MFFA '..'stopped':text_color(255, 82, 83))
     elseif original:find(player.name..' regretfully releases') then
       settings.recast = not settings.recast
       error('inventory full - auto-recast '..tostring(settings.recast))
