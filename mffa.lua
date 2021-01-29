@@ -89,7 +89,7 @@ end
 
 function cancel_fishing()
   local releasedelay = settings.delay.release + (settings.random and math.random() or 0.0)
-  windower.send_command('wait %.2f; lua i release release_catch':format(releasedelay))
+  windower.send_command('wait %.2f; lua i mffa release_catch':format(releasedelay))
 end
 
 function recast_line(delay)
