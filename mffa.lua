@@ -68,7 +68,10 @@ function check_incoming_text(original, modified, original_mode, modified_mode, b
       settings.recast = not settings.recast
       error('inventory full - auto-recast '..tostring(settings.recast))
     elseif original:find('You didn\'t catch anything.') then
+      local recastdelay = settings.delay.cast + (settings.random and (math.random() + math.random(0,2)) or 0.0)
       log('no bites...')
+      if settings.showrecast then log('recast in %.2f seconds':format(recastdelay)) end
+      recast_line(recastdelay)
     elseif original:find('Something clamps') then
       log('it\'s a mob!')
       if settings.release.mob then cancel_fishing() end
